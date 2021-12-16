@@ -71,5 +71,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy explotion Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8149437531296672978, guid: c02d7dfddc6d2cb4a9f5270fe2ca6fb2, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 37bcfdc93623c654c9ee4ddafb73f190, type: 3}
+    - target: {fileID: 8149437531296672978, guid: c02d7dfddc6d2cb4a9f5270fe2ca6fb2, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02d7dfddc6d2cb4a9f5270fe2ca6fb2, type: 3}

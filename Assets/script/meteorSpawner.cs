@@ -20,7 +20,7 @@ public class meteorSpawner : MonoBehaviour
     void Update()
     {
         counter = counter + Time.deltaTime;
-        if(counter >= Random.Range(1.0f,2.0f))
+        if(counter >= Random.Range(10.0f,12.0f))
         {
             prefabSprite.sprite = meteorSprites[Random.Range(0,8)];
             transform.position = new Vector3(Random.Range(-3.9f,3.9f),Random.Range(-1.0f,-2.0f),10.0f);
@@ -31,7 +31,7 @@ public class meteorSpawner : MonoBehaviour
             meteor.MoveRotation(meteor.rotation * Quaternion.Euler(new Vector3(0,0,Random.Range(-100,100)) * 100));
             meteor.gameObject.transform.localScale *= Random.Range(0.1f,1.5f);
 
-            speed = Random.Range(40,70);
+            speed = Random.Range(20,30);
             counter = 0;
         }
     }

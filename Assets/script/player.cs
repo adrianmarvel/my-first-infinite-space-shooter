@@ -25,6 +25,8 @@ public class player : MonoBehaviour
     public Transform rightWeapon;
     public Transform leftWeapon;
     public Transform[] weapons;
+    public AudioClip[] weaponSounds;
+    public AudioSource audioSource;
     public int weaponStates = 1;
     public GameObject shield;
     private SphereCollider shieldCol;
@@ -35,6 +37,7 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rb = gameObject.GetComponent<Rigidbody>();
         controller = gameObject.GetComponent<CharacterController>();
         shieldCol = GetComponent<SphereCollider>();
@@ -82,11 +85,15 @@ public class player : MonoBehaviour
                 case 1:
                     fire(rightWeapon, peluru);
                     fire(leftWeapon, peluru);
+                    audioSource.clip = weaponSounds[0];
+                    audioSource.Play();
                     break;
                 case 2:
                     fire(weapons[0], blueAmmo);
                     fire(weapons[1], blueAmmo);
                     fire(weapons[2], blueAmmo);
+                    audioSource.clip = weaponSounds[1];
+                    audioSource.Play();
                     break;
             }
         }
