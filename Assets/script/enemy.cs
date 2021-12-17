@@ -77,13 +77,18 @@ public class enemy : MonoBehaviour
         allowFire = true;
     }
 
-    void OnTriggerEnter(Collider collision)
+    void OnTriggerEnter(Collider hitInfo)
     {
-        player _player = collision.GetComponent<player>();
-        if (collision.gameObject.name == "Player")
+        player _player = hitInfo.GetComponent<player>();
+        playerShield _shield = hitInfo.GetComponent<playerShield>();
+        if (hitInfo.gameObject.name == "Player")
         {
+            _shield.health -= 50;
             health = 0;
-            _player.TakeDamage(50);
+            if(_shield.health<=0)
+            {
+                _player.TakeDamage(50);
+            }
         }
     }
 }

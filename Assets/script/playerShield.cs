@@ -8,7 +8,7 @@ public class playerShield : MonoBehaviour
     private SpriteRenderer sprite;
     private SphereCollider col;
     public int health;
-    public int speed;
+    private int speed = 10;
     // Start is called before the first frame update
     void Start()
     {

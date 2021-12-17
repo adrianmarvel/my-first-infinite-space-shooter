@@ -76,6 +76,9 @@ public class player : MonoBehaviour
         } else if(Input.GetKeyDown("2"))
         {
             weaponStates = 2;
+        } else if(Input.GetKeyDown("3"))
+        {
+            weaponStates = 3;
         }
 
         if(x != 0 && z != 0 && allowFire == true)
@@ -89,6 +92,15 @@ public class player : MonoBehaviour
                     audioSource.Play();
                     break;
                 case 2:
+                    fire(weapons[0], blueAmmo);
+                    fire(weapons[1], blueAmmo);
+                    fire(weapons[2], blueAmmo);
+                    audioSource.clip = weaponSounds[1];
+                    audioSource.Play();
+                    break;
+                case 3:
+                    fire(rightWeapon, peluru);
+                    fire(leftWeapon, peluru);
                     fire(weapons[0], blueAmmo);
                     fire(weapons[1], blueAmmo);
                     fire(weapons[2], blueAmmo);
