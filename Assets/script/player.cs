@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
+    public RectTransform[] status = new RectTransform[2];
     public int health;
     public float speed = 10f;
     public Joystick joystick1;
@@ -13,10 +14,7 @@ public class player : MonoBehaviour
     public GameObject jetStream2;
     public Text ScoreUI;
     //public Text score;
-    private float rand;
-
-    Vector3 velocity;
-    
+    private float rand;    
     private CharacterController controller;
     private Rigidbody rb;
 
@@ -26,7 +24,7 @@ public class player : MonoBehaviour
     public Transform leftWeapon;
     public Transform[] weapons;
     public AudioClip[] weaponSounds;
-    public AudioSource audioSource;
+    private AudioSource audioSource;
     public int weaponStates = 1;
     public GameObject shield;
     private SphereCollider shieldCol;
@@ -57,8 +55,7 @@ public class player : MonoBehaviour
 
         Quaternion target = Quaternion.Euler(0, 0, -x*50);
         transform.rotation = Quaternion.Slerp(transform.rotation, target,  Time.deltaTime * smooth);
-        shield.transform.rotation = Quaternion.Slerp(shield.transform.rotation, Quaternion.Euler(90, x, 0),  Time.deltaTime * smooth);
-
+        
         transform.position = new Vector3(transform.position.x,0,transform.position.z);
 
         jetStream1.transform.localScale = new Vector3(3,z*5,3);
@@ -79,6 +76,9 @@ public class player : MonoBehaviour
         } else if(Input.GetKeyDown("3"))
         {
             weaponStates = 3;
+        }else if(Input.GetKeyDown("4"))
+        {
+            shieldScript.health = 100;
         }
 
         if(x != 0 && z != 0 && allowFire == true)
@@ -115,9 +115,16 @@ public class player : MonoBehaviour
         if(shieldScript.health <=0)
         {
             shieldCol.enabled = false;
-            shieldScript.enabled = false;
-            shield.SetActive(false);
+            //shieldScript.enabled = false;
+            shield.transform.localScale = Vector3.Lerp(shield.transform.localScale, new Vector3(0.5f,0.5f,0.5f), Time.deltaTime * 5);
+        } else if (shieldScript.health >= 0)
+        {
+            shieldCol.enabled = true;
+            shield.transform.localScale = Vector3.Lerp(shield.transform.localScale, new Vector3(3f,3f,3f), Time.deltaTime * 5);            
         }
+
+        status[0].sizeDelta = new Vector2(health, 10);
+        status[1].sizeDelta = new Vector2(shieldScript.health, 10);
     }
 
     void RandomNumb()

@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 820d152aa171ba744b1fc2b49fada983, type: 3}
+    - target: {fileID: 2555087962027861881, guid: c2af31d5873180b42b4083ebf5aaebf2, type: 3}
+      propertyPath: enemyDamage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4531137338925335754, guid: c2af31d5873180b42b4083ebf5aaebf2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6953106

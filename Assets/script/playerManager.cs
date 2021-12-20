@@ -27,11 +27,6 @@ public class playerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("4"))
-        {
-            shieldScript.health = 100;
-        }
-
         playerHealth = playerScript.health;
         shieldHealth = shieldScript.health;
         speed = playerScript.speed;
