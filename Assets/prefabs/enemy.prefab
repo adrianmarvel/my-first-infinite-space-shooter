@@ -169,8 +169,11 @@ MonoBehaviour:
   jetStream2: {fileID: 8215716000320920249}
   peluru: {fileID: 6397801459796536358, guid: 1228ee57df8dbd545ad987ff6a5b0277, type: 3}
   fireRate: 1
-  enemyExplosion: {fileID: 6706419896549411382, guid: 5086b6ed703f4d94198e3e2a7c66f1c9, type: 3}
+  enemyExplosion: {fileID: 927018832512119311, guid: a283cb020ecf77f409e728c4e18d371b, type: 3}
   health: 500
+  item: 4
+  itemInstance: {fileID: -5663668682668149164, guid: f2124a6d1f0be6b4bb7ef7abda7652a9, type: 3}
+  itemGameObject: {fileID: 1954096608005886177, guid: f2124a6d1f0be6b4bb7ef7abda7652a9, type: 3}
 --- !u!65 &8215715999521325864
 BoxCollider:
   m_ObjectHideFlags: 0

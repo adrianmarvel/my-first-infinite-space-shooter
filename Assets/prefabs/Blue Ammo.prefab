@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerDamage: 50
   enemyDamage: 10
-  explosion: {fileID: 8575061152887038905, guid: c9f49dc4b30ee8d4c8ffecf752b5f0d4, type: 3}
+  explosion: {fileID: 5881798840202267884, guid: 06aaa609bba47be489325eb04461d559, type: 3}
 --- !u!114 &226167882431170409
 MonoBehaviour:
   m_ObjectHideFlags: 0

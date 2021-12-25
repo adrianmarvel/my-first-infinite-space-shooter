@@ -16,6 +16,10 @@ public class enemy : MonoBehaviour
     private float rand;
     private player _player;
     private GameObject player_;
+    public int item;
+    public Rigidbody itemInstance;
+    public GameObject itemGameObject;
+    private item itemScript;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +27,8 @@ public class enemy : MonoBehaviour
         InvokeRepeating("RandomNumb",1,0.1f);
         player_ = GameObject.Find("Player");
         _player = player_.GetComponent<player>();
+
+        itemScript = itemGameObject.GetComponent<item>();
     }
 
     // Update is called once per frame
@@ -36,6 +42,28 @@ public class enemy : MonoBehaviour
         {
             death();
             _player.score = _player.score + 100;
+            item = Random.Range(0,4);
+            if(item == 0)
+            {
+                itemScript.shield = true;
+                itemScript.health = false;
+                itemScript.bullet = false;
+            } else if (item == 1)
+            {
+                itemScript.shield = false;
+                itemScript.health = true;
+                itemScript.bullet = false;
+            } else if (item == 2)
+            {
+                itemScript.shield = false;
+                itemScript.health = false;
+                itemScript.bullet = true;
+            }
+
+            Rigidbody itemInstancee;
+
+            itemInstancee = Instantiate(itemInstance, transform.position, Quaternion.Euler(90,0,180)) as Rigidbody;
+            itemInstancee.AddForce(transform.up * 100f);
         }
 
         if(allowFire==true)
@@ -83,11 +111,11 @@ public class enemy : MonoBehaviour
         playerShield _shield = hitInfo.GetComponent<playerShield>();
         if (hitInfo.gameObject.name == "Player")
         {
-            _shield.health -= 50;
+            _shield.health -= 20;
             health = 0;
             if(_shield.health<=0)
             {
-                _player.TakeDamage(50);
+                _player.TakeDamage(20);
             }
         }
     }

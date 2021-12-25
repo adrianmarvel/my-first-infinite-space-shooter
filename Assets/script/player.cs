@@ -32,6 +32,8 @@ public class player : MonoBehaviour
     public float fireRate;
     private bool allowFire = true;
     public int score;
+    public int blueBulletCount = 40;
+    public GameObject[] bulletPercent = new GameObject[4];
     // Start is called before the first frame update
     void Start()
     {
@@ -95,6 +97,7 @@ public class player : MonoBehaviour
                     fire(weapons[0], blueAmmo);
                     fire(weapons[1], blueAmmo);
                     fire(weapons[2], blueAmmo);
+                    blueBulletCount -= 1;
                     audioSource.clip = weaponSounds[1];
                     audioSource.Play();
                     break;
@@ -125,6 +128,36 @@ public class player : MonoBehaviour
 
         status[0].sizeDelta = new Vector2(health, 10);
         status[1].sizeDelta = new Vector2(shieldScript.health, 10);
+
+        if(blueBulletCount >= 0)
+        {
+            weaponStates = 2;
+        } else if(blueBulletCount <= 0)
+        {
+            weaponStates = 1;
+        }
+        if(blueBulletCount == 30)
+        {
+            bulletPercent[3].SetActive(false);
+        } else if(blueBulletCount == 20)
+        {
+            bulletPercent[2].SetActive(false);
+        } else if(blueBulletCount == 10)
+        {
+            bulletPercent[1].SetActive(false);
+        } else if(blueBulletCount <= 0)
+        {
+            bulletPercent[0].SetActive(false);
+            bulletPercent[1].SetActive(false);
+            bulletPercent[2].SetActive(false);
+            bulletPercent[3].SetActive(false);
+        } else if(blueBulletCount == 40)
+        {
+            bulletPercent[0].SetActive(true);
+            bulletPercent[1].SetActive(true);
+            bulletPercent[2].SetActive(true);
+            bulletPercent[3].SetActive(true);
+        }
     }
 
     void RandomNumb()
