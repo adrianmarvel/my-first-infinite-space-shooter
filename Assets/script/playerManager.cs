@@ -14,11 +14,16 @@ public class playerManager : MonoBehaviour
     public int shieldHealth;
     public float speed;
     public float fireRate;
+    public GameObject explosion;
+    public GameObject gameOverState;
+    private Transform playerTrans;
     // Start is called before the first frame update
     void Awake()
     {
         playerScript = playerObject.GetComponent<player>();
         shieldScript = playerObject.GetComponent<playerShield>();
+
+        playerTrans = playerObject.GetComponent<Transform>();
 
         playerAmmoScript[0] = playerAmmo[0].GetComponent<ammo>();
         playerAmmoScript[1] = playerAmmo[1].GetComponent<ammo>();
@@ -34,5 +39,16 @@ public class playerManager : MonoBehaviour
 
         playerDamage[0] = playerAmmoScript[0].playerDamage;
         playerDamage[1] = playerAmmoScript[1].playerDamage;
+
+        if(playerScript.health <= 0)
+        {
+            Invoke("gameOver", 1);
+        }
+    }
+    
+    void gameOver()
+    {
+        gameOverState.SetActive(true);
+        Time.timeScale = 0f;
     }
 }

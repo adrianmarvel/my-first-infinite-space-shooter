@@ -34,6 +34,8 @@ public class player : MonoBehaviour
     public int score;
     public int blueBulletCount = 40;
     public GameObject[] bulletPercent = new GameObject[4];
+    public GameObject gameOverState;
+    public GameObject explosion;
     // Start is called before the first frame update
     void Start()
     {
@@ -157,6 +159,11 @@ public class player : MonoBehaviour
             bulletPercent[1].SetActive(true);
             bulletPercent[2].SetActive(true);
             bulletPercent[3].SetActive(true);
+        }
+        if(health <= 0)
+        {
+            Instantiate(explosion, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
     }
 
