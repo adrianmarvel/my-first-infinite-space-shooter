@@ -31,11 +31,12 @@ public class buttonsScript : MonoBehaviour
     public void restart()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
     public void mainMenu()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
     }
     public void exit()
     {

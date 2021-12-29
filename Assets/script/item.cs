@@ -54,7 +54,7 @@ public class item : MonoBehaviour
         }
         if(bullet == true && _player !=null)
         {
-            _player.blueBulletCount = 40;
+            _player.blueBulletCount = 100;
             Destroy(gameObject,0.0f);
         }
     }

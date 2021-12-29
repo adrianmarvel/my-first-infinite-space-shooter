@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 public class mainMenu : MonoBehaviour
 {
     public int speed;
+    public AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audio.enabled = false;
     }
 
     // Update is called once per frame
@@ -20,10 +21,12 @@ public class mainMenu : MonoBehaviour
 
     public void buttonStart()
     {
+        audio.enabled = true;
         SceneManager.LoadScene(1);
     }
     public void buttonExit()
     {
+        audio.enabled = true;
         Application.Quit();
     }
 }

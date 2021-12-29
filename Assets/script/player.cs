@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
-    public RectTransform[] status = new RectTransform[2];
+    public GameObject[] statusObject;
+    private RectTransform[] status = new RectTransform[2];
     public int health;
     public float speed = 10f;
     public Joystick joystick1;
@@ -32,8 +33,9 @@ public class player : MonoBehaviour
     public float fireRate;
     private bool allowFire = true;
     public int score;
-    public int blueBulletCount = 40;
-    public GameObject[] bulletPercent = new GameObject[4];
+    public int blueBulletCount;
+    public int percent;
+    public GameObject[] bulletPercent = new GameObject[10];
     public GameObject gameOverState;
     public GameObject explosion;
     // Start is called before the first frame update
@@ -44,6 +46,8 @@ public class player : MonoBehaviour
         controller = gameObject.GetComponent<CharacterController>();
         shieldCol = GetComponent<SphereCollider>();
         shieldScript = GetComponent<playerShield>();
+        status[0] = statusObject[0].GetComponent<RectTransform>();
+        status[1] = statusObject[1].GetComponent<RectTransform>();
 
         InvokeRepeating("RandomNumb",1,0.1f);
     }
@@ -128,8 +132,26 @@ public class player : MonoBehaviour
             shield.transform.localScale = Vector3.Lerp(shield.transform.localScale, new Vector3(3f,3f,3f), Time.deltaTime * 5);            
         }
 
-        status[0].sizeDelta = new Vector2(health, 10);
-        status[1].sizeDelta = new Vector2(shieldScript.health, 10);
+        if(health > 0)
+        {
+            status[0].sizeDelta = new Vector2(health, 10);
+            statusObject[2].SetActive(true);
+        } else if (health <= 0)
+        {
+            status[0].sizeDelta = new Vector2(0, 10);
+            statusObject[2].SetActive(false);
+        }
+        
+        if(shieldScript.health > 0)
+        {
+            status[1].sizeDelta = new Vector2(shieldScript.health, 10);
+            statusObject[3].SetActive(true);
+        } else if (shieldScript.health <= 0)
+        {
+            status[1].sizeDelta = new Vector2(0,10);
+            statusObject[3].SetActive(false);
+        }
+        
 
         if(blueBulletCount >= 0)
         {
@@ -138,28 +160,26 @@ public class player : MonoBehaviour
         {
             weaponStates = 1;
         }
-        if(blueBulletCount == 30)
+
+        if(blueBulletCount == 100)
         {
-            bulletPercent[3].SetActive(false);
-        } else if(blueBulletCount == 20)
-        {
-            bulletPercent[2].SetActive(false);
-        } else if(blueBulletCount == 10)
-        {
-            bulletPercent[1].SetActive(false);
-        } else if(blueBulletCount <= 0)
-        {
-            bulletPercent[0].SetActive(false);
-            bulletPercent[1].SetActive(false);
-            bulletPercent[2].SetActive(false);
-            bulletPercent[3].SetActive(false);
-        } else if(blueBulletCount == 40)
-        {
-            bulletPercent[0].SetActive(true);
-            bulletPercent[1].SetActive(true);
-            bulletPercent[2].SetActive(true);
-            bulletPercent[3].SetActive(true);
+            int i = 0;
+            while(i<bulletPercent.Length)
+            {
+                bulletPercent[i].SetActive(true);
+                i++;
+            }
         }
+        percent = blueBulletCount/10;
+        if(percent>=0)
+        {
+            if(percent>=10)
+            {
+                percent = 9;
+            }
+            bulletPercent[percent].SetActive(false);
+        }
+        
         if(health <= 0)
         {
             Instantiate(explosion, transform.position, transform.rotation);

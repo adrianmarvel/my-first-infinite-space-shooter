@@ -20,6 +20,7 @@ public class enemy : MonoBehaviour
     public Rigidbody itemInstance;
     public GameObject itemGameObject;
     private item itemScript;
+    public int maxRand = 6;
 
     // Start is called before the first frame update
     void Start()
@@ -42,28 +43,28 @@ public class enemy : MonoBehaviour
         {
             death();
             _player.score = _player.score + 100;
-            item = Random.Range(0,4);
+            item = Random.Range(0,maxRand);
             if(item == 0)
             {
                 itemScript.shield = true;
                 itemScript.health = false;
                 itemScript.bullet = false;
+                itemDrop();
             } else if (item == 1)
             {
                 itemScript.shield = false;
                 itemScript.health = true;
                 itemScript.bullet = false;
+                itemDrop();
             } else if (item == 2)
             {
                 itemScript.shield = false;
                 itemScript.health = false;
                 itemScript.bullet = true;
+                itemDrop();
             }
 
-            Rigidbody itemInstancee;
-
-            itemInstancee = Instantiate(itemInstance, transform.position, Quaternion.Euler(90,0,180)) as Rigidbody;
-            itemInstancee.AddForce(transform.up * 100f);
+            
         }
 
         if(allowFire==true)
@@ -94,6 +95,13 @@ public class enemy : MonoBehaviour
     {
         Instantiate(enemyExplosion, transform.position, transform.rotation);
         Destroy(gameObject);
+    }
+    void itemDrop()
+    {
+        Rigidbody itemInstancee;
+
+        itemInstancee = Instantiate(itemInstance, transform.position, Quaternion.Euler(90,0,180)) as Rigidbody;
+        itemInstancee.AddForce(transform.up * 100f);
     }
     void delay()
     {

@@ -8,7 +8,7 @@ public class EnemyIntance : MonoBehaviour
     public GameObject enemyPrefab;
     private enemySpawner EnemySpawner;
     public float counter;
-    public float timeSpawn = 1.0f;
+    public float timeSpawn = 2.0f;
     // Start is called before the first frame update
     void Start()
     {

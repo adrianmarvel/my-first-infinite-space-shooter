@@ -14,9 +14,15 @@ public class playerManager : MonoBehaviour
     public int shieldHealth;
     public float speed;
     public float fireRate;
+    public GameObject enemyObject;
+    private enemy enemyScript;
     public GameObject explosion;
     public GameObject gameOverState;
     private Transform playerTrans;
+    public GameObject enemySpawner;
+    private EnemyIntance spawner;
+    private int modulus;
+    private int increase = 0;
     // Start is called before the first frame update
     void Awake()
     {
@@ -24,9 +30,12 @@ public class playerManager : MonoBehaviour
         shieldScript = playerObject.GetComponent<playerShield>();
 
         playerTrans = playerObject.GetComponent<Transform>();
+        spawner = enemySpawner.GetComponent<EnemyIntance>();
 
         playerAmmoScript[0] = playerAmmo[0].GetComponent<ammo>();
         playerAmmoScript[1] = playerAmmo[1].GetComponent<ammo>();
+
+        enemyScript = enemyObject.GetComponent<enemy>();
     }
 
     // Update is called once per frame
@@ -44,8 +53,21 @@ public class playerManager : MonoBehaviour
         {
             Invoke("gameOver", 1);
         }
+        modulus = playerScript.score%1000;
+        if(spawner.timeSpawn >= 0.5f)
+        {
+            if(modulus==0 && increase==0)
+            {
+                spawner.timeSpawn -= 0.1f;
+                enemyScript.maxRand += 1;
+                increase++;
+            }else if(modulus==100)
+            {
+                increase = 0;
+            }
+        }        
     }
-    
+
     void gameOver()
     {
         gameOverState.SetActive(true);
