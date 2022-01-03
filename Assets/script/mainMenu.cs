@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 public class mainMenu : MonoBehaviour
 {
     public int speed;
-    public AudioSource audio;
+    public AudioSource audioSource;
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-        audio.enabled = false;
+        
     }
 
     // Update is called once per frame
@@ -21,12 +22,23 @@ public class mainMenu : MonoBehaviour
 
     public void buttonStart()
     {
-        audio.enabled = true;
+        audioSource.Play();
+        anim.Play("start");
+        Invoke("start", 0.5f);
+    }
+
+    public void start()
+    {
         SceneManager.LoadScene(1);
     }
     public void buttonExit()
     {
-        audio.enabled = true;
+        audioSource.Play();
+        anim.Play("exit");
+        Invoke("Exit", 0.5f);
+    }
+    public void Exit()
+    {
         Application.Quit();
     }
 }

@@ -75,20 +75,6 @@ public class player : MonoBehaviour
             jetStream2.transform.localScale = new Vector3(3,rand,3);
         }
 
-        if(Input.GetKeyDown("1"))
-        {
-            weaponStates = 1;
-        } else if(Input.GetKeyDown("2"))
-        {
-            weaponStates = 2;
-        } else if(Input.GetKeyDown("3"))
-        {
-            weaponStates = 3;
-        }else if(Input.GetKeyDown("4"))
-        {
-            shieldScript.health = 100;
-        }
-
         if(x != 0 && z != 0 && allowFire == true)
         {
             switch(weaponStates)

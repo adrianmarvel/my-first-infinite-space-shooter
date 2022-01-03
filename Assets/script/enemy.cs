@@ -21,10 +21,12 @@ public class enemy : MonoBehaviour
     public GameObject itemGameObject;
     private item itemScript;
     public int maxRand = 6;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         InvokeRepeating("RandomNumb",1,0.1f);
         player_ = GameObject.Find("Player");
         _player = player_.GetComponent<player>();
@@ -71,6 +73,7 @@ public class enemy : MonoBehaviour
         {
             fire(rightWeapon);
             fire(leftWeapon);
+            audioSource.Play();
         }
     }
     void RandomNumb()

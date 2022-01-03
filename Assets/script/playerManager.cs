@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class playerManager : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class playerManager : MonoBehaviour
     public GameObject gameOverState;
     private Transform playerTrans;
     public GameObject enemySpawner;
+    public int score;
     private EnemyIntance spawner;
     private int modulus;
     private int increase = 0;
@@ -48,6 +50,8 @@ public class playerManager : MonoBehaviour
 
         playerDamage[0] = playerAmmoScript[0].playerDamage;
         playerDamage[1] = playerAmmoScript[1].playerDamage;
+
+        score = playerScript.score;
 
         if(playerScript.health <= 0)
         {

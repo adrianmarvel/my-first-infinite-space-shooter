@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoadData : MonoBehaviour
 {
@@ -48,4 +49,5 @@ public class LoadData : MonoBehaviour
         color2.g = data.color2[1];
         color2.b = data.color2[2];
     }
+    
 }
