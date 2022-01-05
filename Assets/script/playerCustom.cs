@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class playerCustom : MonoBehaviour
 {
+    public AudioSource music;
+    public AudioSource sfx;
+    public Transform cameraa;
+    public AudioSource buttonPress;
     public GameObject player;
     private MeshFilter meshFilter;
     public Mesh[] mesh = new Mesh[3];
@@ -19,12 +23,14 @@ public class playerCustom : MonoBehaviour
     void Start()
     {
         meshFilter = player.GetComponent<MeshFilter>();
+        music.volume = PlayerPrefs.GetFloat("MusicVolume");
+        sfx.volume = PlayerPrefs.GetFloat("SfxVolume");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        cameraa.transform.Rotate(new Vector3(-1,0,0) * 2 * Time.deltaTime);
     }
 
     public void meshChanger(Mesh _mesh)
@@ -75,6 +81,10 @@ public class playerCustom : MonoBehaviour
     }
     public void play()
     {
-        SceneManager.LoadScene(2);
+        //SceneManager.LoadScene(2);
+    }
+    public void buttonPressed()
+    {
+        buttonPress.Play();
     }
 }

@@ -20,8 +20,9 @@ public class enemy : MonoBehaviour
     public Rigidbody itemInstance;
     public GameObject itemGameObject;
     private item itemScript;
-    public int maxRand = 6;
+    public int maxRand;
     private AudioSource audioSource;
+    public int killScore = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +45,7 @@ public class enemy : MonoBehaviour
         if(health <= 0)
         {
             death();
-            _player.score = _player.score + 100;
+            _player.score = _player.score + killScore;
             item = Random.Range(0,maxRand);
             if(item == 0)
             {

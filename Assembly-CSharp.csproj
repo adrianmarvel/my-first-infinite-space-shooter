@@ -63,9 +63,11 @@
     <Compile Include="Assets\Starfield Skybox\Demo\Script\LookCamera.cs" />
     <Compile Include="Assets\Scripts\ResizePanel.cs" />
     <Compile Include="Assets\script\mainMenu.cs" />
+    <Compile Include="Assets\script\LoadingScreen.cs" />
     <Compile Include="Assets\script\destroyObject.cs" />
     <Compile Include="Assets\script\EnemyIntance.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
+    <Compile Include="Assets\script\HighscoreClass.cs" />
     <Compile Include="Assets\script\SaveSystem.cs" />
     <Compile Include="Assets\script\meteorSpawner.cs" />
     <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
@@ -84,11 +86,14 @@
     <Compile Include="Assets\Scripts\DragPanel.cs" />
     <Compile Include="Assets\script\lockHeight.cs" />
     <Compile Include="Assets\Scripts\DragMe.cs" />
+    <Compile Include="Assets\script\MainMenuOptions.cs" />
     <Compile Include="Assets\script\PlayerData.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
+    <Compile Include="Assets\script\Highscore.cs" />
     <Compile Include="Assets\script\enemySpawner.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
+    <Compile Include="Assets\script\SoundManager.cs" />
     <Compile Include="Assets\script\ammo.cs" />
     <Compile Include="Assets\script\playerManager.cs" />
     <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />
@@ -97,9 +102,7 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\script\player.cs" />
     <Compile Include="Assets\Scripts\ChangeColor.cs" />
-    <Compile Include="Assets\script\HighscoreClass.cs" />
-    <Compile Include="Assets\script\Highscore.cs" />
-    <Compile Include="Assets\script\MainMenuOptions.cs" />
+    <Compile Include="Assets\script\Difficulty.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\space\Spritesheet\sheet.xml" />

@@ -72,6 +72,14 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8215715999521325865, guid: 69477f568bbf084418d2edc7ded2080f, type: 3}
+      propertyPath: maxRand
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215715999521325865, guid: 69477f568bbf084418d2edc7ded2080f, type: 3}
+      propertyPath: killScore
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 8215715999521325867, guid: 69477f568bbf084418d2edc7ded2080f, type: 3}
       propertyPath: m_IsTrigger
       value: 1

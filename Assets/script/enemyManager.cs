@@ -13,7 +13,6 @@ public class enemyManager : MonoBehaviour
     private ammo enemyBulletScript;
     public int health;
     public int enemyDamage;
-    public float fireRate;
     public int speed;
     public float timeSpawn;
     // Start is called before the first frame update
@@ -27,7 +26,6 @@ public class enemyManager : MonoBehaviour
         health = enemyScript.health;
         enemyDamage = enemyBulletScript.enemyDamage;
         speed = enemyMovement.speed;
-        fireRate = enemyScript.fireRate;
         timeSpawn = enemySpawner.timeSpawn;
     }
 
