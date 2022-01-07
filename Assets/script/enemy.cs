@@ -22,8 +22,16 @@ public class enemy : MonoBehaviour
     private item itemScript;
     public int maxRand;
     private AudioSource audioSource;
-    public int killScore = 100;
+    public int killScore;
+    private int modulus;
+    private int increase = 0;
+    private GameObject spawn;
+    private EnemyIntance spawner;
 
+    void Awake()
+    {
+        killScore = PlayerPrefs.GetInt("KillScore");
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +41,13 @@ public class enemy : MonoBehaviour
         _player = player_.GetComponent<player>();
 
         itemScript = itemGameObject.GetComponent<item>();
+
+        maxRand = PlayerPrefs.GetInt("MaxRand");
+
+        spawn = GameObject.Find("Enemy Spawner 2");
+        spawner = spawn.GetComponent<EnemyIntance>();
+
+        Debug.Log(maxRand);
     }
 
     // Update is called once per frame
@@ -45,7 +60,6 @@ public class enemy : MonoBehaviour
         if(health <= 0)
         {
             death();
-            _player.score = _player.score + killScore;
             item = Random.Range(0,maxRand);
             if(item == 0)
             {
@@ -76,6 +90,20 @@ public class enemy : MonoBehaviour
             fire(leftWeapon);
             audioSource.Play();
         }
+
+        modulus = _player.score%1000;
+        if(spawner.timeSpawn >= 0.5f)
+        {
+            if(modulus==0 && increase==0)
+            {
+                spawner.timeSpawn -= 0.1f;
+                maxRand += 1;
+                increase++;
+            }else if(modulus==100)
+            {
+                increase = 0;
+            }
+        }        
     }
     void RandomNumb()
     {
@@ -97,6 +125,7 @@ public class enemy : MonoBehaviour
 
     void death()
     {
+        _player.score += killScore;
         Instantiate(enemyExplosion, transform.position, transform.rotation);
         Destroy(gameObject);
     }

@@ -121,11 +121,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8215715999521325870}
-  - component: {fileID: 8215715999521325865}
   - component: {fileID: 8215715999521325864}
   - component: {fileID: 8215715999521325867}
   - component: {fileID: 7608857107190976585}
   - component: {fileID: 718126113755600922}
+  - component: {fileID: 1546490265874539882}
+  - component: {fileID: 33884681803321668}
   m_Layer: 11
   m_Name: enemy
   m_TagString: Untagged
@@ -152,31 +153,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
---- !u!114 &8215715999521325865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8215715999521325871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 199e82148e64c4a47883ebad72b927de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rightWeapon: {fileID: 8215716000152645259}
-  leftWeapon: {fileID: 8215715998908377986}
-  jetStream1: {fileID: 8215715998617226408}
-  jetStream2: {fileID: 8215716000320920249}
-  peluru: {fileID: 6397801459796536358, guid: 1228ee57df8dbd545ad987ff6a5b0277, type: 3}
-  fireRate: 1
-  enemyExplosion: {fileID: 927018832512119311, guid: a283cb020ecf77f409e728c4e18d371b, type: 3}
-  health: 500
-  item: 4
-  itemInstance: {fileID: -5663668682668149164, guid: f2124a6d1f0be6b4bb7ef7abda7652a9, type: 3}
-  itemGameObject: {fileID: 1954096608005886177, guid: f2124a6d1f0be6b4bb7ef7abda7652a9, type: 3}
-  maxRand: 3
-  killScore: 300
 --- !u!65 &8215715999521325864
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -318,6 +294,45 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1546490265874539882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8215715999521325871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 199e82148e64c4a47883ebad72b927de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightWeapon: {fileID: 8215716000152645259}
+  leftWeapon: {fileID: 8215715998908377986}
+  jetStream1: {fileID: 8215715998617226408}
+  jetStream2: {fileID: 8215716000320920249}
+  peluru: {fileID: 6397801459796536358, guid: 1228ee57df8dbd545ad987ff6a5b0277, type: 3}
+  fireRate: 1
+  enemyExplosion: {fileID: 927018832512119311, guid: a283cb020ecf77f409e728c4e18d371b, type: 3}
+  health: 500
+  item: 4
+  itemInstance: {fileID: -5663668682668149164, guid: f2124a6d1f0be6b4bb7ef7abda7652a9, type: 3}
+  itemGameObject: {fileID: 1954096608005886177, guid: f2124a6d1f0be6b4bb7ef7abda7652a9, type: 3}
+  maxRand: 3
+  killScore: 100
+--- !u!114 &33884681803321668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8215715999521325871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a35cdf47ccb98478edcae9a6ccc448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  killScore: 0
+  _player: {fileID: 5668022786716462147, guid: 0860030900a7c154e9180a935f8d3d5f, type: 3}
 --- !u!1 &8215715999747620515
 GameObject:
   m_ObjectHideFlags: 0

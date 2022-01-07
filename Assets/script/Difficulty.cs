@@ -8,27 +8,24 @@ public class Difficulty : MonoBehaviour
 {
     public int difficulty;
     public ammo enemyDamage;
-    public enemy _enemy;
-    public enemySpawner spawner;
+    //public enemy enemy2;
     public TextMeshProUGUI diff;
     // Start is called before the first frame update
     void Awake()
     {
-        diff.text = difficulty.ToString();
         difficulty = PlayerPrefs.GetInt("Difficulty");
-        switch(difficulty)
+        diff.text = PlayerPrefs.GetInt("Difficulty").ToString();
+
+        switch(PlayerPrefs.GetInt("Difficulty"))
         {
             case 0:
-                enemyDamage.enemyDamage = 3;
-                _enemy.killScore = 100;
+            enemyDamage.enemyDamage = 3;
                 break;
             case 1:
-                enemyDamage.enemyDamage = 5;
-                _enemy.killScore = 200;
+            enemyDamage.enemyDamage = 5;
                 break;
             case 2:
-                enemyDamage.enemyDamage = 7;
-                _enemy.killScore = 300;
+            enemyDamage.enemyDamage = 7;
                 break;
         }
     }
@@ -36,6 +33,6 @@ public class Difficulty : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

@@ -16,7 +16,7 @@ public class playerManager : MonoBehaviour
     public float speed;
     public float fireRate;
     public GameObject enemyObject;
-    private enemy enemyScript;
+    public enemy enemy1;
     public GameObject explosion;
     public GameObject gameOverState;
     private Transform playerTrans;
@@ -36,8 +36,6 @@ public class playerManager : MonoBehaviour
 
         playerAmmoScript[0] = playerAmmo[0].GetComponent<ammo>();
         playerAmmoScript[1] = playerAmmo[1].GetComponent<ammo>();
-
-        enemyScript = enemyObject.GetComponent<enemy>();
     }
 
     // Update is called once per frame
@@ -63,7 +61,7 @@ public class playerManager : MonoBehaviour
             if(modulus==0 && increase==0)
             {
                 spawner.timeSpawn -= 0.1f;
-                enemyScript.maxRand += 1;
+                enemy1.maxRand += 1;
                 increase++;
             }else if(modulus==100)
             {

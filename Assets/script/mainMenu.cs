@@ -16,6 +16,8 @@ public class mainMenu : MonoBehaviour
     public Slider sfx;
     public float musicVolume;
     public float sfxVolume;
+    public int killScore;
+    public int maxRand = 3;
     public RectTransform selector;
     public RectTransform[] selection = new RectTransform[3];
     // Start is called before the first frame update
@@ -26,6 +28,8 @@ public class mainMenu : MonoBehaviour
         music.value = PlayerPrefs.GetFloat("MusicVolume");
         sfx.value = PlayerPrefs.GetFloat("SfxVolume");
         difficulty = PlayerPrefs.GetInt("Difficulty");
+
+        PlayerPrefs.SetInt("MaxRand", maxRand);
 
         switch(difficulty)
         {
@@ -54,6 +58,7 @@ public class mainMenu : MonoBehaviour
         PlayerPrefs.SetFloat("MusicVolume", musicVolume);
         PlayerPrefs.SetFloat("SfxVolume", sfxVolume);
         PlayerPrefs.SetInt("Difficulty", difficulty);
+        PlayerPrefs.SetInt("KillScore", killScore);
     }
 
     public void buttonStart()
@@ -98,15 +103,18 @@ public class mainMenu : MonoBehaviour
     {
         difficulty = 0;
         selector.transform.position = selection[0].transform.position;
+        killScore = 100;
     }
     public void medium()
     {
         difficulty = 1;
         selector.transform.position = selection[1].transform.position;
+        killScore = 200;
     }
     public void hard()
     {
         difficulty = 2;
         selector.transform.position = selection[2].transform.position;
+        killScore = 300;
     }
 }

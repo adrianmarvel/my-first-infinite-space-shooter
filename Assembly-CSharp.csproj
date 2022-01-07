@@ -59,6 +59,7 @@
     <Compile Include="Assets\script\item.cs" />
     <Compile Include="Assets\script\LoadData.cs" />
     <Compile Include="Assets\Scripts\PanelManager.cs" />
+    <Compile Include="Assets\script\Difficulty.cs" />
     <Compile Include="Assets\script\Spacecraft.cs" />
     <Compile Include="Assets\Starfield Skybox\Demo\Script\LookCamera.cs" />
     <Compile Include="Assets\Scripts\ResizePanel.cs" />
@@ -80,7 +81,6 @@
     <Compile Include="Assets\script\cameraMovement.cs" />
     <Compile Include="Assets\script\destroyExposion.cs" />
     <Compile Include="Assets\script\bgExtender.cs" />
-    <Compile Include="Assets\script\enemyManager.cs" />
     <Compile Include="Assets\script\playerCustom.cs" />
     <Compile Include="Assets\script\buttonsScript.cs" />
     <Compile Include="Assets\Scripts\DragPanel.cs" />
@@ -102,7 +102,8 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\script\player.cs" />
     <Compile Include="Assets\Scripts\ChangeColor.cs" />
-    <Compile Include="Assets\script\Difficulty.cs" />
+    <Compile Include="Assets\script\enemyScore.cs" />
+    <Compile Include="Assets\script\enemyManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\space\Spritesheet\sheet.xml" />

@@ -68,6 +68,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1546490265874539882, guid: 69477f568bbf084418d2edc7ded2080f, type: 3}
+      propertyPath: maxRand
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546490265874539882, guid: 69477f568bbf084418d2edc7ded2080f, type: 3}
+      propertyPath: killScore
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8215715999521325864, guid: 69477f568bbf084418d2edc7ded2080f, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -78,7 +86,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8215715999521325865, guid: 69477f568bbf084418d2edc7ded2080f, type: 3}
       propertyPath: killScore
-      value: 300
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8215715999521325867, guid: 69477f568bbf084418d2edc7ded2080f, type: 3}
       propertyPath: m_IsTrigger
