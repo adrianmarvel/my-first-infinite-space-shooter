@@ -20,13 +20,8 @@ public class enemy : MonoBehaviour
     public Rigidbody itemInstance;
     public GameObject itemGameObject;
     private item itemScript;
-    public int maxRand;
     private AudioSource audioSource;
     public int killScore;
-    private int modulus;
-    private int increase = 0;
-    private GameObject spawn;
-    private EnemyIntance spawner;
 
     void Awake()
     {
@@ -41,13 +36,6 @@ public class enemy : MonoBehaviour
         _player = player_.GetComponent<player>();
 
         itemScript = itemGameObject.GetComponent<item>();
-
-        maxRand = PlayerPrefs.GetInt("MaxRand");
-
-        spawn = GameObject.Find("Enemy Spawner 2");
-        spawner = spawn.GetComponent<EnemyIntance>();
-
-        Debug.Log(maxRand);
     }
 
     // Update is called once per frame
@@ -60,28 +48,7 @@ public class enemy : MonoBehaviour
         if(health <= 0)
         {
             death();
-            item = Random.Range(0,maxRand);
-            if(item == 0)
-            {
-                itemScript.shield = true;
-                itemScript.health = false;
-                itemScript.bullet = false;
-                itemDrop();
-            } else if (item == 1)
-            {
-                itemScript.shield = false;
-                itemScript.health = true;
-                itemScript.bullet = false;
-                itemDrop();
-            } else if (item == 2)
-            {
-                itemScript.shield = false;
-                itemScript.health = false;
-                itemScript.bullet = true;
-                itemDrop();
-            }
-
-            
+            itemDrop();
         }
 
         if(allowFire==true)
@@ -89,21 +56,7 @@ public class enemy : MonoBehaviour
             fire(rightWeapon);
             fire(leftWeapon);
             audioSource.Play();
-        }
-
-        modulus = _player.score%1000;
-        if(spawner.timeSpawn >= 0.5f)
-        {
-            if(modulus==0 && increase==0)
-            {
-                spawner.timeSpawn -= 0.1f;
-                maxRand += 1;
-                increase++;
-            }else if(modulus==100)
-            {
-                increase = 0;
-            }
-        }        
+        }    
     }
     void RandomNumb()
     {

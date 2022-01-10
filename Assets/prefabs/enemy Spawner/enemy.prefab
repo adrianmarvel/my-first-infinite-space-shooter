@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 718126113755600922}
   - component: {fileID: 1546490265874539882}
   - component: {fileID: 33884681803321668}
+  - component: {fileID: 4954992318760163188}
   m_Layer: 11
   m_Name: enemy
   m_TagString: Untagged
@@ -317,7 +318,7 @@ MonoBehaviour:
   item: 4
   itemInstance: {fileID: -5663668682668149164, guid: f2124a6d1f0be6b4bb7ef7abda7652a9, type: 3}
   itemGameObject: {fileID: 1954096608005886177, guid: f2124a6d1f0be6b4bb7ef7abda7652a9, type: 3}
-  maxRand: 3
+  maxRand: 5
   killScore: 100
 --- !u!114 &33884681803321668
 MonoBehaviour:
@@ -333,6 +334,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killScore: 0
   _player: {fileID: 5668022786716462147, guid: 0860030900a7c154e9180a935f8d3d5f, type: 3}
+--- !u!114 &4954992318760163188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8215715999521325871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60009ab2fa086c341b0b4786d55775ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: space Limiter bottom
 --- !u!1 &8215715999747620515
 GameObject:
   m_ObjectHideFlags: 0

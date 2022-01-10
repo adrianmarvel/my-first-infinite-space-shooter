@@ -9,10 +9,36 @@ public class item : MonoBehaviour
     public bool health;
     public bool bullet;
     private SpriteRenderer rend;
+    public int itemNumber;
+    public int maxRand = 3;
     // Start is called before the first frame update
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
+
+        itemNumber = Random.Range(0, maxRand);
+        switch(itemNumber)
+        {
+            case 0:
+                shield = true;
+                health = false;
+                bullet = false;
+                break;
+            case 1:
+                shield = false;
+                health = true;
+                bullet = false;
+                break;
+            case 2:
+                shield = false;
+                health = false;
+                bullet = true;
+                break;
+            default:
+                Destroy(gameObject, 0.0f);
+                break;
+        }
+
         if(shield == true)
         {
             rend.sprite = spritItem[0];

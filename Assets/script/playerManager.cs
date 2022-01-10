@@ -25,6 +25,7 @@ public class playerManager : MonoBehaviour
     private EnemyIntance spawner;
     private int modulus;
     private int increase = 0;
+    public item itemScript;
     // Start is called before the first frame update
     void Awake()
     {
@@ -61,13 +62,13 @@ public class playerManager : MonoBehaviour
             if(modulus==0 && increase==0)
             {
                 spawner.timeSpawn -= 0.1f;
-                enemy1.maxRand += 1;
+                itemScript.maxRand += 1;
                 increase++;
-            }else if(modulus==100)
+            }else if(modulus > 100)
             {
                 increase = 0;
             }
-        }        
+        }    
     }
 
     void gameOver()
