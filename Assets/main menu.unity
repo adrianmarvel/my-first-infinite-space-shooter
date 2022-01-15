@@ -4227,12 +4227,12 @@ MonoBehaviour:
   backsound: {fileID: 986715395}
   anim: {fileID: 1009837189}
   anim1: {fileID: 1902877238}
-  difficulty: 0
+  difficulty: 1
   music: {fileID: 125605115}
   sfx: {fileID: 1053886393}
   musicVolume: 0
   sfxVolume: 0
-  killScore: 0
+  killScore: 100
   selector: {fileID: 1442955712}
   selection:
   - {fileID: 1189601229}

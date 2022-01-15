@@ -941,8 +941,8 @@ RectTransform:
   - {fileID: 13088352}
   - {fileID: 488299529}
   - {fileID: 1402254483}
-  - {fileID: 1927706850}
   - {fileID: 329139374}
+  - {fileID: 1927706850}
   - {fileID: 963699587}
   - {fileID: 1337381944}
   - {fileID: 1678311694}
@@ -1581,7 +1581,7 @@ RectTransform:
   - {fileID: 1681181764}
   - {fileID: 1366734444}
   m_Father: {fileID: 95638907}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2317,6 +2317,7 @@ MonoBehaviour:
   scoreText: {fileID: 13088353}
   highscoreOnGameOver: {fileID: 1314862839}
   yourScore: {fileID: 29924195}
+  playerScipt: {fileID: 919132148403241444}
 --- !u!114 &442817736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2574,7 +2575,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &488299529
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10408,6 +10409,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4785555503878861728, guid: 0860030900a7c154e9180a935f8d3d5f, type: 3}
   m_PrefabInstance: {fileID: 5668022786005332546}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &919132148403241444 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5668022786716462147, guid: 0860030900a7c154e9180a935f8d3d5f, type: 3}
+  m_PrefabInstance: {fileID: 5668022786005332546}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148403241442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5436eeaf65bf80942b7319d516157788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5668022786005332546
 PrefabInstance:
   m_ObjectHideFlags: 0

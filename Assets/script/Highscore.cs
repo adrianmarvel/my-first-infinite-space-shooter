@@ -12,13 +12,12 @@ public class Highscore : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highscoreOnGameOver;
     public TextMeshProUGUI yourScore;
-    private player playerScipt;
+    public player playerScipt;
 
     void Start()
     {
         LoadHighscore();
 
-        playerScipt = player.GetComponent<player>();
         scoreText.text = "Highscore : " + currentHighscore;
     }
 

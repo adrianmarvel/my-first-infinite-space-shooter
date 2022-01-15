@@ -11,12 +11,12 @@ public class mainMenu : MonoBehaviour
     public AudioSource backsound;
     public Animator anim;
     public Animator anim1;
-    public int difficulty;
+    public int difficulty = 1;
     public Slider music;
     public Slider sfx;
     public float musicVolume;
     public float sfxVolume;
-    public int killScore;
+    public int killScore = 200;
     public RectTransform selector;
     public RectTransform[] selection = new RectTransform[3];
     // Start is called before the first frame update
